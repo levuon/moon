@@ -12,71 +12,71 @@ var requireConfig = {
   waitSeconds: 15,
 
   prdPaths: {
-	"app": "prd_js/app.min",
+    "app": "prd_js/app.min",
 
-	"config": "prd_js/config.min",
+    "config": "prd_js/config.min",
 
-	"utils": "prd_js/utils.min", //include md5,utils
+    "utils": "prd_js/utils.min", //include md5,utils
 
-	"logicGalaxy": "prd_js/logic.min"//include all logic module,eg:route,controller,service,directive
+    "logicGalaxy": "prd_js/logic.min"//include all logic module,eg:route,controller,service,directive
   },
   devPaths: {
-	'jquery': 'lib/jQuery/jquery-2.1.4',
+    'jquery': 'lib/jQuery/jquery-2.1.4',
 
-	'angular': 'lib/angular/angular',
+    'angular': 'lib/angular/angular',
 
-	'ui.router': 'lib/angular-ui/angular-ui-router',
+    'ui.router': 'lib/angular-ui/angular-ui-router',
 
-	'app': 'js/app',
+    'app': 'js/app',
 
-	'config': 'js/config',
+    'config': 'js/config',
 
-	"logicMoon": "js/logic.require",
+    "logicMoon": "js/logic.require",
 
-	// "utils": "js/utils/utils",
+    // "utils": "js/utils/utils",
 
-	"md5": "js/utils/md5",
+    "md5": "js/utils/md5",
 
-	/**
-	 * 为了开发遍历清楚，这里对 controller,service,route 进行了细粒度的划分，后期会进行部分合并，部分按需加载
-	 */
-	'controllers': 'js/controller/controllers',
+    /**
+     * 为了开发遍历清楚，这里对 controller,service,route 进行了细粒度的划分，后期会进行部分合并，部分按需加载
+     */
+    'controllers': 'js/controller/controllers',
 
-	'services': 'js/service/services',
+    'services': 'js/service/services',
 
-	'route': 'js/route/route',
+    'route': 'js/route/route',
 
-	'directives': 'js/directive/directives'
+    'directives': 'js/directive/directives'
   },
   paths: {
 
-	'local-storage': 'lib/angular/angular-local-storage'
+    'local-storage': 'lib/angular/angular-local-storage'
 
   },
 
   shim: {
-	'angular': {
-	  exports: 'angular'
-	},
-	"ui.router": {
-	  deps: ['angular']
-	},
-	"local-storage": {
-	  deps: ['angular'],
-	  exports: ""
-	},
-	"utils": {
-	  export: "util"
-	},
-	"md5": {
-	  export: "md5"
-	}
+    'angular': {
+      exports: 'angular'
+    },
+    "ui.router": {
+      deps: ['angular']
+    },
+    "local-storage": {
+      deps: ['angular'],
+      exports: ""
+    },
+    "utils": {
+      export: "util"
+    },
+    "md5": {
+      export: "md5"
+    }
   }
 
 };
 
 requireConfig.devFlag ? $.extend(requireConfig.paths, requireConfig.devPaths)
-: $.extend(requireConfig.paths, requireConfig.prdPaths);
+ : $.extend(requireConfig.paths, requireConfig.prdPaths);
 
 
 //开始引用 2个js文件 jquery 和requirejs requirejs初始化是调用req({}). 主要将环境配置好 (通过newContext 生成的上下文.)
