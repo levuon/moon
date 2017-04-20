@@ -8,18 +8,18 @@
  */
 define( [ 'angular' ], function () {
 
-    //route需要依赖ui.router
-    var route = angular.module( 'route', [ "ui.router" ] );
+  //route需要依赖ui.router
+  var route = angular.module( 'route', [ "ui.router" ] );
 
-    route
-        .config( [ '$stateProvider', '$urlRouterProvider', '$httpProvider', function ( $stateProvider ) {
-            $stateProvider
-                .state( 'home', {
-                    url: "/home",
-                    templateUrl: "template/home.html",
-                    controller: 'homeCtrl'
-                } )
+  route
+  .config( [ '$stateProvider', '$urlRouterProvider', '$httpProvider', function ( $stateProvider ) {
+    $stateProvider
+    .state( 'home', {
+      url: "/home",
+      templateUrl: "template/home.html",
+      controller: 'homeCtrl'
+    } )
 
-        } ] );
-    return route;
+  } ] );
+  return route;
 } );

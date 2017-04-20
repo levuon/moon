@@ -4,8 +4,8 @@
 
 define( [ "angular" ], function () {
 
-    var directives = angular.module( "directives", [] );
+  var directives = angular.module( "directives", [] );
 
 
-    return directives;
+  return directives;
 } );
